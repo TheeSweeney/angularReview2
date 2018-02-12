@@ -1,0 +1,15 @@
+What problem(s) does Angular try to solve?
+the complexity of managing the DOM, the logic, and the data manually.
+
+Model View Whatever
+    Model - data, eg. a variable - JS
+    View - things people see, what the user interacts with - html
+
+    View and Model are bound together such that what happens in one is reflected in the other.
+
+HTML Custom Attributes
+    HTML allows you to add attributes to html elements that are not part of the html official standard. The attributes do not effect the code in any way but still exist as data in the DOM.
+
+    angular uses the formate "ng-*" * being any number of custom angular attributes. Angular looks for these attributes and their presence allows the application to work with the html.
+
+    
