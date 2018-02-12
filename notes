@@ -1,5 +1,5 @@
 What problem(s) does Angular try to solve?
-the complexity of managing the DOM, the logic, and the data manually.
+    simplifying the complexity cause by having to manage the DOM, the logic, and the data manually.
 
 Model View Whatever
     Model - data, eg. a variable - JS
@@ -11,5 +11,38 @@ HTML Custom Attributes
     HTML allows you to add attributes to html elements that are not part of the html official standard. The attributes do not effect the code in any way but still exist as data in the DOM.
 
     angular uses the formate "ng-*" * being any number of custom angular attributes. Angular looks for these attributes and their presence allows the application to work with the html.
+    
+Dependency Injection
+    giving a function an object rather than creating an object inside a function, you pass it to the function.
+    
+    so with:
+    
+        var Person = function(firstname, lastname){
+            this.firstname = firstname;
+            this.lastname = lastname;
+        }
+    
+    instead of:
+    
+        function logPerson(){
+            var john = new Person("John", "Doe")
+            console.log(john)
+        }
+        
+        logPerson()
+        
+     dependency injection would work like this:
+     
+        function logPerson(person){
+            console.log(person)
+        }
+        
+        var john = new Person("John", "Doe")
+        logPerson(john)
+        
+
+    This helps with easier to maintain code, better SOC, and better readability;
+    
+    Consider that if you log out a function without including (), it will log a string versin of the function. This means that angular can that a function, convert it to a string, and then parse out vertain pieces of it. So for dependency injection, angular will parse out the paramters of controller functions to see which are angular variables (ie, which begin with $), it will create the relevant objects and pass them as parameters to the function.
 
     
